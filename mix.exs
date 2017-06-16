@@ -39,8 +39,7 @@ defmodule CrmSync.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.8.0"},
-     {:poison, "~> 2.2.0"},
-     {:ok, "~> 1.6"}
+     {:poison, "~> 2.2.0"}
     ]
   end
 

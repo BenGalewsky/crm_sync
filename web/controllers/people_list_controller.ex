@@ -11,9 +11,11 @@ defmodule CrmSync.PeopleListController do
 
   def new(conn, _params) do
     changeset = PeopleList.changeset(%PeopleList{})
-    case NationBuilder.People.fetch do
+
+    # Get the valid lists from the CRM
+    case NationBuilder.People.extractLists do
       {:ok, response} ->
-         render(conn, "new.html", changeset: changeset, categories: NationBuilder.People.extractLists(response))
+         render(conn, "new.html", changeset: changeset, categories: response)
       {:error, reason} ->
         json(conn, reason)
     end
