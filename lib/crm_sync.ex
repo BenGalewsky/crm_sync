@@ -11,7 +11,8 @@ defmodule CrmSync do
       # Start the Ecto repository
       supervisor(CrmSync.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(CrmSync.Endpoint, []),
+      supervisor(CrmSync.Endpoint, [])
+
       # Start your own worker by calling: CrmSync.Worker.start_link(arg1, arg2, arg3)
       # worker(CrmSync.Worker, [arg1, arg2, arg3]),
     ]

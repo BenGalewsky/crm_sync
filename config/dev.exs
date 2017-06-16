@@ -42,4 +42,11 @@ config :crm_sync, CrmSync.Repo,
   hostname: "10.0.2.2",
   pool_size: 10
 
+
+config :quantum, :crm_sync,
+ cron: [
+    # Every minute
+    "* * * * *":      {CrmSync.CullOldGames, :cull }
+]
+
 import_config "dev.secret.exs"

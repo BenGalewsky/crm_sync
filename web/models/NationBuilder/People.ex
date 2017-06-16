@@ -26,7 +26,7 @@ defmodule NationBuilder.People do
   end
 
  def extractLists() do
-   with {:ok, body} <- fetch,
+   with {:ok, body} <- fetch(),
         {:ok, select_choice} <- extractLists(body) do
             {:ok, select_choice}
         else {:error, reason} -> {:error, reason}

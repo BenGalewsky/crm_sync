@@ -19,7 +19,7 @@ defmodule CrmSync.Mixfile do
   def application do
     [mod: {CrmSync, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :httpoison]]
+                    :phoenix_ecto, :postgrex, :httpoison, :quantum]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,7 +39,8 @@ defmodule CrmSync.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.8.0"},
-     {:poison, "~> 2.2.0"}
+     {:poison, "~> 2.2.0"},
+     {:quantum, "~> 1.9.2"}
     ]
   end
 
