@@ -36,14 +36,19 @@ defmodule NationBuilder.People do
   def extractLists(body) do
     with {:ok, json_result} <- Poison.decode(body),
          {:ok, result_list} <- fetch(json_result, "results") do
-            select_choices = for n <- result_list do
-                with {:ok, name} <- fetch(n, "name"),
-                {:ok, slug} <- fetch(n, "slug") do
-                  {name, slug}
-                end
-            end
-                {:ok, select_choices}
+            extractList(result_list)
          else {:error, reason} -> {:error, "unable to parse response from nation builder"}
     end
+  end
+
+  # Map over each entry and generate a tuple for the select element with name and slug
+  def extractList(result_list) do
+    select_choices = for n <- result_list do
+        with {:ok, name} <- fetch(n, "name"),
+        {:ok, slug} <- fetch(n, "slug") do
+          {name, slug}
+        end
+    end
+    {:ok, select_choices}
   end
 end
