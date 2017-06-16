@@ -1,0 +1,13 @@
+<h2>Show people list</h2>
+
+<ul>
+
+  <li>
+    <strong>List name:</strong>
+    <%= @people_list.list_name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: people_list_path(@conn, :edit, @people_list) %>
+<%= link "Back", to: people_list_path(@conn, :index) %>
