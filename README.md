@@ -1,5 +1,21 @@
 # CrmSync
 
+This application run to keep your CRM data in synch with a 
+[National Voter File](www.nationalvoterfile.org)data warehouse.
+
+## Configuration
+The app needs access to your CRM. Currently it supports NationBuilder.
+
+Create `dev.secret.exs` in the config directory and set the endpoint 
+for your connection to NationBuilder (including your API key) as
+```elixir
+use Mix.Config
+
+config :crm_sync, NationBuilder.API,
+    endpoint: <your endpoint here>
+```
+
+## Launch
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
