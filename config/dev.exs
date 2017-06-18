@@ -46,7 +46,7 @@ config :crm_sync, CrmSync.Repo,
 config :quantum, :crm_sync,
  cron: [
     # Every minute
-    "* * * * *":      {CrmSync.CullOldGames, :cull }
+    "* * * * *":      {CrmSync.PollPeople, :poll }
 ]
 
 import_config "dev.secret.exs"

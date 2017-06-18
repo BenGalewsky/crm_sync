@@ -1,16 +1,21 @@
 defmodule CrmSync.PersonController do
   use CrmSync.Web, :controller
-
   alias CrmSync.Person
 
   def index(conn, _params) do
+    IO.puts("Time of last upload ")
+    dt = NationBuilder.PeopleSearch.time_of_last_upload
+    date_time = NationBuilder.PeopleSearch.format_updated_at_query(dt)
+
+    IO.puts(date_time)
+
     people = Repo.all(Person)
     render(conn, "index.html", people: people)
   end
 
   def new(conn, _params) do
       case NationBuilder.PeopleSearch.load_people() do
-        {:ok} -> IO.puts("ok")
+        {:ok, message} -> IO.puts("ok -- " <> message)
       end
     changeset = Person.changeset(%Person{})
     render(conn, "new.html", changeset: changeset)
