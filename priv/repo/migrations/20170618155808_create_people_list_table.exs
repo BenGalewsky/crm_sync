@@ -1,4 +1,4 @@
-defmodule CrmSync.Repo.Migrations.CreatePeopleList do
+defmodule CrmSync.Repo.Migrations.CreatePeopleListTable do
   use Ecto.Migration
 
   def change do
@@ -7,6 +7,5 @@ defmodule CrmSync.Repo.Migrations.CreatePeopleList do
 
       timestamps()
     end
-
   end
 end

@@ -18,6 +18,7 @@ defmodule CrmSync.Router do
 
     get "/", PageController, :index
     resources "/people_lists", PeopleListController
+    resources "/people", PersonController
 
   end
 

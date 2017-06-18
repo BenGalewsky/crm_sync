@@ -1,0 +1,23 @@
+<h2>Show person</h2>
+
+<ul>
+
+  <li>
+    <strong>Crm:</strong>
+    <%= @person.crm_id %>
+  </li>
+
+  <li>
+    <strong>Updated at:</strong>
+    <%= @person.crm_updated_at %>
+  </li>
+
+  <li>
+    <strong>Json blob:</strong>
+    <%= @person.json_blob %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: person_path(@conn, :edit, @person) %>
+<%= link "Back", to: person_path(@conn, :index) %>

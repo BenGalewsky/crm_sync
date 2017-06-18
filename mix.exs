@@ -40,7 +40,9 @@ defmodule CrmSync.Mixfile do
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.8.0"},
      {:poison, "~> 2.2.0"},
-     {:quantum, "~> 1.9.2"}
+     {:quantum, "~> 1.9.2"},
+     {:timex, "~> 3.0"},
+     {:timex_ecto, "~> 3.0"}
     ]
   end
 
