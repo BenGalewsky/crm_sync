@@ -1,7 +1,7 @@
 # CrmSync
 
 This application run to keep your CRM data in synch with a 
-[National Voter File](www.nationalvoterfile.org)data warehouse.
+[National Voter File](http://www.nationalvoterfile.org)data warehouse.
 
 It does this by polling for new people from your CRM and
 writing them to staging database by Ecto.
